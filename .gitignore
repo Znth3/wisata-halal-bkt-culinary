@@ -1,0 +1,5 @@
+# ignore directory img
+/img
+
+# ignore IDE idea
+.idea

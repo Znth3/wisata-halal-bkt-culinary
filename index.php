@@ -10,8 +10,9 @@ require("connect.php");
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <title>1311521018</title>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNnzxae2AewMUN0Tt_fC3gN38goeLVdVE&sensor=true"></script>
+    <title>Improved Culinary</title>
+<!--     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNnzxae2AewMUN0Tt_fC3gN38goeLVdVE&sensor=true"></script>-->
+<!--    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApI_alZkozk35V_ndp-Mag335D-JDFB5c&sensor=true"></script>-->
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -37,7 +38,7 @@ require("connect.php");
 
 <script type="text/javascript">
 
-var server = "http://localhost/culinary/postgresql/";
+var server = "http://localhost/kuliner/";
 var map;
 var markersDua = [];
 var koordinat = 'null'
@@ -2546,11 +2547,17 @@ function viewprice()
 
                 
               <h6 class="centered" style="color: #f7d976;"">Culinary</h6>
+                    <li class="sub-menu">
+                        <a href="javascript:; " onclick="viewkul()">
+                            <i class="fa fa-thumb-tack"></i>
+                            <span>List Culinary</span>
+                        </a>
+                    </li>
 
-                     <li class="sub-menu">
+                    <li class="sub-menu">
                       <a href="javascript:;" >
                         <i class="fa fa-thumb-tack"></i>
-                        <span>Arround Culinary</span>
+                        <span>Arround Me</span>
                       </a>
                       <ul class="treeview-menu">
                         <div class=" form-group" style="color: white;"> <br>
@@ -2572,27 +2579,7 @@ function viewprice()
 
          
 
-              <li class="sub-menu">
-                <a href="javascript:;" >
-                  <i class="fa fa-search"></i>
-                  <span>Searching</span>
-                </a>
-                <ul class="sub">
-                  <div class=" form-group">
-                    <li>
-                      <div class="search">
-                        <div class="col-md-15 padding-0 text-center">
-                         <div class="form-group form-animate-text"><br>
-                          <input type="text"  class="form-text" placeholder="...." id="kul_nama" required>
-                            <span class="bar"></span> 
-                        </div>         
-                       <button type="submit" class="btn btn-info btn-block btn-flat" id="kul_button" onclick='find_kul();'>Search</button>
-                     </div> 
-                     </div> 
-                    </li>
-                  </div>         
-                </ul>
-                </li>
+
 
 
                 <li class="sub-menu">
@@ -2601,6 +2588,28 @@ function viewprice()
                     <span>View Culinary</span>
                   </a>
                   <ul class="sub">
+                      <li class="sub-menu">
+                          <a href="javascript:;" >
+                              <i class="fa fa-search"></i>
+                              <span>Searching</span>
+                          </a>
+                          <ul class="sub">
+                              <div class=" form-group">
+                                  <li>
+                                      <div class="search">
+                                          <div class="col-md-15 padding-0 text-center">
+                                              <div class="form-group form-animate-text"><br>
+                                                  <input type="text"  class="form-text" placeholder="...." id="kul_nama" required>
+                                                  <span class="bar"></span>
+                                              </div>
+                                              <button type="submit" class="btn btn-info btn-block btn-flat" id="kul_button" onclick='find_kul();'>Search</button>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </div>
+                          </ul>
+                      </li>
+
                     <li class="sub-menu">
                       <a href="javascript:;" >
                         <i class="fa fa-globe"></i>
@@ -2703,39 +2712,37 @@ function viewprice()
       <section id="main-content">
         <section class="wrapper site-min-height">
           <div class="row mt">
-           <div class="col-lg-8 ds">
+           <div class="col-12 col-lg-8">
             <section class="panel">
-               <header class="panel-heading">
-                <label style="color: black">List :</label>
-                   <button type="button" onclick="posisisekarang()" class="btn btn-default " data-toggle="tooltip" id="posisinow" title="Posisi Saya" 
-                    style="margin: 15px" style="margin-right: 7px;" ><i class="fa fa-location-arrow" > </i>
-                      </button>
-
-                       <button type="button" onclick="lokasimanual()" class="btn btn-default"  data-toggle="tooltip" id="posmanual" title="Posisi Manual" 
-                              style="margin-right: 7px;"><i class="fa fa-map-marker" ></i>
-                      </button>
-                                            
-                       <button type="button" onclick="viewkul()" class="btn btn-default" data-toggle="tooltip" title="Melihat Semua Kuliner" 
-                               style="margin: 7px" style="margin-right: 7px;"><i class="fa fa-bullseye"></i>
-                       </button>
-
-                       <!-- <button type="button" onclick="clean()" class="btn btn-default" data-toggle="tooltip" title="Refresh" style="margin-right: 7px;"><i class="fa fa-refresh"></i>
-                       </button> -->
-                       <label id="tombol">
-                       <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-default" data-toggle="tooltip" title="Legenda" style="margin-right: 7px;"><i class="fa fa-eye"></i>
-                       </a>
-                       </label>
-                  </header>
                 <!-- First Action -->
                       <div class="panel-body">
-                          <div id="map" style="width:100%;height:400px; z-index:50"></div>
+                          <div>
+                              <button type="button" onclick="posisisekarang()" class="btn btn-default " data-toggle="tooltip" id="posisinow" title="Posisi Saya"
+                                      style="margin: 15px" style="margin-right: 7px;" ><i class="fa fa-location-arrow" > </i>
+                              </button>
+
+                              <button type="button" onclick="lokasimanual()" class="btn btn-default"  data-toggle="tooltip" id="posmanual" title="Posisi Manual"
+                                      style="margin-right: 7px;"><i class="fa fa-map-marker" ></i>
+                              </button>
+
+                              <!--                       <button type="button" onclick="viewkul()" class="btn btn-default" data-toggle="tooltip" title="Melihat Semua Kuliner" -->
+                              <!--                               style="margin: 7px" style="margin-right: 7px;"><i class="fa fa-bullseye"></i>-->
+                              <!--                       </button>-->
+
+                              <!-- <button type="button" onclick="clean()" class="btn btn-default" data-toggle="tooltip" title="Refresh" style="margin-right: 7px;"><i class="fa fa-refresh"></i>
+                              </button> -->
+                              <label id="tombol">
+                                  <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-default" data-toggle="tooltip" title="Legenda" style="margin-right: 7px;"><i class="fa fa-eye"></i>
+                                  </a>
+                          </div>
+                          <div id="map" style="width:98%;height:400px; z-index:50"></div>
                       </div>
             </section>
            
               
                       <!--custom chart end-->
-                          <div class="col-lg-6 ds"  id="hasildet" style="display:none;">
-                          <a class="btn btn-compose">Information</a>
+                          <div class="col-lg-6 ds"  id="Information" style="display:none;">
+                          <a class="btn btn-compose">Result</a>
                               <!-- First Action -->
                               <div class="box-body" style="max-height:450px;overflow:auto;">
                                 <div class="form-group" id="hasilcaridet1" style="display:none;">
@@ -2746,7 +2753,7 @@ function viewprice()
                         </div>
 
                          <div class="col-lg-4 ds"  id="hasildetculi" style="display:none;">
-                          <a class="btn btn-compose">Information</a>
+                          <a class="btn btn-compose">Result</a>
                               <!-- First Action -->
                               <div class="box-body" style="max-height:450px;overflow:auto;">
                                 <div class="form-group" id="hasilcaridetculi1" style="display:none;">
@@ -2865,15 +2872,15 @@ function viewprice()
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
     
-        <div class="col-sm-4"  id="hasilik" >
+        <div class="col-sm-8 col-md-8 col-lg-4"  id="hasilik" >
           <section class="panel">
           <!-- <div class="col-md-12 padding-0" style="display:none;"> -->
-          <h2 class="box-title" id="hasilpencarian">
+<!--          <h2 class="box-title" id="hasilpencarian">-->
           <!-- <marquee width="100%" behavior="alternate" scrollamount="4">Bukittinggi Tourism..</marquee> -->
-          </h2><br>
+<!--          </h2><br>-->
            <section class="panel">
                     <div class="panel-body">
-          <a class="btn btn-compose">Information</a>
+          <a class="btn btn-compose">Result</a>
               <!-- First Action -->
 
               <div class="box-body" style="max-height:400px;overflow:auto;">

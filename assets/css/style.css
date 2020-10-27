@@ -43,7 +43,7 @@ a, a:hover, a:focus {
 
 /* Bootstrap Modifications */
 .modal-header {
-	background: #68dff0;
+	background: #ffd777;
 }
 
 .modal-title {
@@ -412,8 +412,8 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #00B2EE;
-    border-bottom: 1px solid #c9aa5f;
+    background: #000000;
+    border-bottom: 1px solid;
 }
 
 .wrapper {
@@ -2435,7 +2435,7 @@ a.mail-dropdown {
     padding:20px;
 }
 .btn-compose {
-    background:#00B2EE;
+    background:#000000;
     padding:12px 0;
     text-align:center;
     width:100%;
