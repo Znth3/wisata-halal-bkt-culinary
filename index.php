@@ -12,7 +12,7 @@ require("connect.php");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title>Improved Culinary</title>
 <!--      API here-->
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNnzxae2AewMUN0Tt_fC3gN38goeLVdVE&sensor=true"></script>
+      <script type="text/javascript" src=""></script>
      
 
     <!-- Bootstrap core CSS -->
