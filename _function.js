@@ -1739,7 +1739,7 @@ function recKul(id90){
   hapusawal();
   $('#recommend').hide();
   $('#hasilcari').append("<thead><th>Name</th><th colspan='3'>Action</th></thead>");
-  $.ajax({url: server+'selectkul.php?lay='+id90, data: "", dataType: 'json', success: function(rows){
+  $.ajax({url: server+'popCulinary.php?lay='+id90, data: "", dataType: 'json', success: function(rows){
     console.log(id90);
     if (rows==null){
       alert('Data Not Found');

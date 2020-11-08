@@ -5,6 +5,7 @@ include 'connect.php';
 $id = $_POST['id'];
 $nama = $_POST['nama'];
 $comment = $_POST['comment'];
+$rating = $_POST['rating'];
 
 $cariMax = "select max(id_review) as max from review";
 $queryMax = pg_query($cariMax);
@@ -28,7 +29,7 @@ if(strpos($id,"H") !== false){
 } else if(strpos($id,"IK") !== false){
 	$sql = "insert into review(name,id_ik,comment,tanggal,id_review) values('$nama','$id','$comment','$tanggal','$id_review')";
 } else if(strpos($id,"RM") !== false){
-	$sql = "insert into review(name,id_kuliner,comment,tanggal,id_review) values('$nama','$id','$comment','$tanggal','$id_review')";
+	$sql = "insert into review(name,id_kuliner,comment,tanggal,id_review, rating) values('$nama','$id','$comment','$tanggal','$id_review', '$rating')";
 } else if(strpos($id,"tw") !== false){
 	$sql = "insert into review(name,id_ow,comment,tanggal,id_review) values('$nama','$id','$comment','$tanggal','$id_review')";
 }
