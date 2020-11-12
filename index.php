@@ -13,7 +13,7 @@ require("connect.php");
     <title>Improved Culinary</title>
     <!--      API here-->
     <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>
+            "></script>
 
 
     <!-- Bootstrap core CSS -->
