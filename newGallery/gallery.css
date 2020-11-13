@@ -5,6 +5,8 @@
 /* Position the image container (needed to position the left and right arrows) */
 .containerG {
     position: relative;
+    box-shadow: 0px 2px 5px #aaa;
+    padding: 5px;
 }
 
 /* Hide the images by default */
@@ -78,20 +80,29 @@
     background: #0e2e42;
 }
 
+.rowG{
+    background-color: #292c31;
+    padding-bottom: 3%;
+}
+
 /* Six columns side by side */
 .column {
-    background-color: #0e2e42;
+    background-color: #292c31;
     float: left;
     width: 20%;
-    margin: 2.5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
 }
 
 /* Add a transparency effect for thumnbail images */
 .demo {
     opacity: 0.6;
+    height: 50px;
 }
 
 .active,
 .demo:hover {
     opacity: 1;
+    border: solid 1px;
 }

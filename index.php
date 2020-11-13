@@ -13,7 +13,7 @@ require("connect.php");
     <title>Improved Culinary</title>
     <!--      API here-->
     <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=basemap"></script>
 
 
     <!-- Bootstrap core CSS -->
@@ -165,8 +165,6 @@ require("connect.php");
 
                 <br>
 
-
-                <h6 class="centered" style="color: #f7d976;">Culinary</h6>
                 <li class="sub-menu">
                     <a href="javascript:; " onclick="viewkul()">
                         <i class="fa fa-bars"></i>
@@ -346,12 +344,12 @@ require("connect.php");
                                 <label style="color: black; margin-right:20px">Google Map with Location List</label>
                                 <button type="button" onclick="posisisekarang()" class="btn btn-success "
                                         data-toggle="tooltip" id="posisinow" title="Posisi Saya"
-                                        style="margin-right: 7px;"><i class="fa fa-location-arrow"> </i>
+                                        style=""><i class="fa fa-location-arrow"> </i>
                                 </button>
 
                                 <button type="button" onclick="lokasimanual()" class="btn btn-success"
                                         data-toggle="tooltip" id="posmanual" title="Posisi Manual"
-                                        style="margin-right: 7px;"><i class="fa fa-map-marker"></i>
+                                        style=""><i class="fa fa-map-marker"></i>
                                 </button>
 
                                 <!--                       <button type="button" onclick="viewkul()" class="btn btn-default" data-toggle="tooltip" title="Melihat Semua Kuliner" -->

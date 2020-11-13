@@ -23,6 +23,8 @@ session_start();
     <!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="jquery-barrating/dist/themes/bootstrap-stars.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <!--  Slide -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,13 +43,18 @@ session_start();
             width: 13px;
             padding: 0
         }
+
+        .html5gallery-car-0{
+            margin-top:5px;
+        }
     </style>
 
     <script src="assets/js/chart-master/Chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>
 
     <!-- <script src="../config_public.js"></script> -->
     <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNnzxae2AewMUN0Tt_fC3gN38goeLVdVE&sensor=true"></script>
+            src=""></script>
 
     <!--LOADER-->
     <style>
@@ -311,8 +318,8 @@ session_start();
                                             </div>
 
                                             <div class="white-panel">
-                                                <div class="html5gallery" data-autoslide="true" data-responsive="true" data-height="250"
-                                                     data-width="272">
+                                                <div class="html5gallery" data-autoslide="true" data-responsive="true" data-height="1" data-theme="horizontal"
+                                                     data-width="2">
                                                     <?php
 
                                                     if (strpos($id, "H") !== false) {  //Hotel
@@ -425,15 +432,21 @@ session_start();
                                     <div class="white-panel pns">
 
                                         <header class="panel-heading" style="float:left">
-                                            <label style="color: black; margin-right:20px">Google Map with Location
-                                                List</label>
-                                            <a class="btn btn-default" role="button" data-toggle="collapse"
-                                               onclick="lokasimanual()" title=" Manual Position"><i
-                                                        class="fa fa-location-arrow" style="color:black;"></i></a>
-                                            <a class="btn btn-default" role="button" data-toggle="collapse"
-                                               onclick="posisisekarang()" title="Current Position"
-                                               style="margin-right:10px"><i class="fa fa-map-marker"
-                                                                            style="color:black;"></i></a>
+                                            <label style="color: black; margin-right:20px">Google Map with Location List</label>
+                                            <button type="button" onclick="posisisekarang()" class="btn btn-success "
+                                                    data-toggle="tooltip" id="posisinow" title="Posisi Saya"
+                                                    style="margin-right: 1px"><i class="fa fa-location-arrow"> </i>
+                                            </button>
+
+                                            <button type="button" onclick="lokasimanual()" class="btn btn-success"
+                                                    data-toggle="tooltip" id="posmanual" title="Posisi Manual"
+                                                    style="margin-right: 1px;"><i class="fa fa-map-marker"></i>
+                                            </button>
+                                            <label id="tombol">
+                                                <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-success"
+                                                   data-toggle="tooltip" title="Legenda" style="margin-right: 1px;"><i
+                                                            class="fa fa-eye"></i>
+                                                </a>
                                         </header>
                                         <div class="row">
                                             <div class="col-sm-6 col-xs-6"></div>

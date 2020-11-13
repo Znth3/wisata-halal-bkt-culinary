@@ -18,16 +18,15 @@ $querysearch="
         , culinary_place.name
         , ST_X(ST_Centroid(culinary_place.geom)) AS lng
         , ST_Y(ST_CENTROID(culinary_place.geom)) As lat
-        , avg(review.rating)
+        , count(review.id_review) as review
     FROM culinary_place 
     LEFT JOIN review 
         ON review.id_kuliner = culinary_place.id 
     LEFT JOIN detail_culinary 
         ON detail_culinary.id_culinary_place = culinary_place.id 
-    WHERE detail_culinary.id_culinary in ($c)
+    WHERE detail_culinary.id_culinary in ('11')
     GROUP BY culinary_place.id
-	HAVING avg(review.rating) IS NOT NULL
-	ORDER BY avg(review.rating) DESc
+	ORDER BY review  DESC
     LIMIT 5";
 
 $hasil=pg_query($querysearch);

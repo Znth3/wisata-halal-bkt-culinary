@@ -6,7 +6,7 @@
     <!-- Full-width images with number text -->
     <div class="mySlides ">
         <div class="numbertext">1 / 6</div>
-        <img src="img/culinary/cancang.jpg" onclick="recKul('11')" style="width:100%">
+        <img src="img/culinary/cancang.jpg" onclick="recKul('11')" style="width:100%; height: 50%">
     </div>
 
     <div class="mySlides ">
@@ -16,7 +16,7 @@
 
     <div class="mySlides ">
         <div class="numbertext">3 / 6</div>
-        <img src="img/culinary/nasikapau.jpg" onclick="recKul('22')" style="width:100%">
+        <img src="img/culinary/nasikapau.jpg" onclick="recKul('22')" style="width:100%; height: 250px">
     </div>
 
     <div class="mySlides ">
