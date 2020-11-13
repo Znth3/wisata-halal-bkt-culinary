@@ -889,7 +889,7 @@ function detculi(id14433){
                 $('#hasilcaridet').append("<tr><td colspan='2'> "+culinary+"</td><td> "+price+"</td></tr>");
             infowindow = new google.maps.InfoWindow({
             position: centerBaru,
-            content: "<center><span style=color:black><b>"+namaa+"</b><br><br><i class='fa fa-map-marker'></i> "+address+"<br><i class='fa fa-phone'></i> "+cp+"<br><i class='fa fa-clock-o'></i> "+open+"-"+close+"</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\""+latitude+"\",\""+longitude+"\",\""+namaa+"\")'></a>&nbsp&nbsp<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\""+id+"\")'></a>&nbsp&nbsp <a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",   
+            content: "<center><span style=color:black><b>"+namaa+"</b><br><br><i class='fa fa-map-marker'></i> "+address+"<br><i class='fa fa-phone'></i> "+cp+"<br><i class='fa fa-clock-o'></i> "+open+"-"+close+"</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\""+latitude+"\",\""+longitude+"\",\""+namaa+"\")'></a>&nbsp;<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\""+id+"\")'></a>&nbsp;<a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",
             pixelOffset: new google.maps.Size(0, -33)
             });
           infoposisi.push(infowindow); 
@@ -953,7 +953,7 @@ function detculi_1(id14433){
 
             infowindow = new google.maps.InfoWindow({
             position: centerBaru,
-            content: "<center><span style=color:black><b>"+namaa+"</b><br><br><i class='fa fa-map-marker'></i> "+address+"<br><i class='fa fa-phone'></i> "+cp+"<br><i class='fa fa-clock-o'></i> "+open+"-"+close+"</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\""+latitude+"\",\""+longitude+"\",\""+namaa+"\")'></a>&nbsp&nbsp<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\""+id+"\")'></a>&nbsp&nbsp <a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",   
+            content: "<center><span style=color:black><b>"+namaa+"</b><br><br><i class='fa fa-map-marker'></i> "+address+"<br><i class='fa fa-phone'></i> "+cp+"<br><i class='fa fa-clock-o'></i> "+open+"-"+close+"</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\""+latitude+"\",\""+longitude+"\",\""+namaa+"\")'></a>&nbsp;<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\""+id+"\")'></a>&nbsp;<a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",
             pixelOffset: new google.maps.Size(0, -33)
             });
           infoposisi.push(infowindow); 
@@ -1046,7 +1046,7 @@ function detculiculi(id14433z){
                 $('#hasilcaridet').append("<tr><td colspan='2'> "+culinary+"</td><td> "+price+"</td></tr>");
             infowindow = new google.maps.InfoWindow({
             position: centerBaru,
-            content: "<center><span style=color:black><b>"+namaa+"</b><br><br><i class='fa fa-map-marker'></i> "+address+"<br><i class='fa fa-phone'></i> "+cp+"<br><i class='fa fa-clock-o'></i> "+open+"-"+close+"</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\""+latitude+"\",\""+longitude+"\",\""+namaa+"\")'></a>&nbsp&nbsp<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\""+id+"\")'></a>&nbsp&nbsp <a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",   
+            content: "<center><span style=color:black><b>"+namaa+"</b><br><br><i class='fa fa-map-marker'></i> "+address+"<br><i class='fa fa-phone'></i> "+cp+"<br><i class='fa fa-clock-o'></i> "+open+"-"+close+"</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\""+latitude+"\",\""+longitude+"\",\""+namaa+"\")'></a>&nbsp;<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\""+id+"\")'></a>&nbsp;<a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",
             pixelOffset: new google.maps.Size(0, -33)
             });
           infoposisi.push(infowindow); 
