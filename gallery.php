@@ -22,7 +22,6 @@ session_start();
     <link href="assets/css/style-responsive.css" rel="stylesheet">
     <!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="jquery-barrating/dist/themes/bootstrap-stars.css">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
@@ -210,31 +209,6 @@ session_start();
                                         <input type="hidden" name="id" value="<?php echo $_GET['idgallery'] ?>">
                                         <table id="" class="table">
                                             <tbody style='vertical-align:top;'>
-                                            <tr>
-                                                <td colspan="2"><label>Rating</label></td>
-                                                <td>
-                                                    <div class="br-wrapper br-theme-bootstrap-stars">
-                                                        <select required name="rating" id="rating">
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                        </select>
-                                                    </div>
-
-                                                    <script src="assets/js/jquery-1.8.3.min.js"></script>
-                                                    <script src="jquery-barrating/dist/jquery.barrating.min.js"></script>
-
-                                                    <script>
-                                                        $(function (){
-                                                            $('#rating').barrating({
-                                                                theme: 'bootstrap-stars'
-                                                            });
-                                                        });
-                                                    </script>
-                                                </td>
-                                            </tr>
                                             <tr>
                                                 <td><label>Comment</label></td>
                                                 <td>:</td>
@@ -433,19 +407,19 @@ session_start();
 
                                         <header class="panel-heading" style="float:left">
                                             <label style="color: black; margin-right:20px">Google Map with Location List</label>
-                                            <button type="button" onclick="posisisekarang()" class="btn btn-success "
+                                            <a type="button" onclick="posisisekarang()" class="btn btn-success fa fa-location-arrow"
                                                     data-toggle="tooltip" id="posisinow" title="Posisi Saya"
-                                                    style="margin-right: 1px"><i class="fa fa-location-arrow"> </i>
-                                            </button>
+                                                    style="margin-right: 1px">
+                                            </a>
 
-                                            <button type="button" onclick="lokasimanual()" class="btn btn-success"
+                                            <a type="button" onclick="lokasimanual()" class="btn btn-success fa fa-map-marker"
                                                     data-toggle="tooltip" id="posmanual" title="Posisi Manual"
-                                                    style="margin-right: 1px;"><i class="fa fa-map-marker"></i>
-                                            </button>
+                                                    style="margin-right: 1px;"><i class=""></i>
+                                            </a>
                                             <label id="tombol">
-                                                <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-success"
+                                                <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-success fa fa-eye"
                                                    data-toggle="tooltip" title="Legenda" style="margin-right: 1px;"><i
-                                                            class="fa fa-eye"></i>
+                                                            class=""></i>
                                                 </a>
                                         </header>
                                         <div class="row">
@@ -486,7 +460,6 @@ session_start();
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="html5gallery/html5gallery.js"></script>
-<script src="jquery-barrating/dist/jquery.barrating.min.js"></script>
 
 
 <script src="assets/js/bootstrap.min.js"></script>
@@ -544,13 +517,6 @@ session_start();
 
 <script src="_function.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-    $(function (){
-        $('#inputRating').barrating({
-            theme: 'bootstrap-stars'
-        });
-    });
-</script>
 
 </body>
 </html>

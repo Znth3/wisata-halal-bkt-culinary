@@ -38,7 +38,7 @@ require("connect.php");
     <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datetimepicker/datertimepicker.html"/>
     <link rel="stylesheet" href="assets/css/bootstrap-slider.css" type="text/css">
     <link rel="stylesheet" href="newGallery/gallery.css">
-<!--    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <!--    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>-->
 
     <script type="text/javascript" src="_function.js"></script>
     <style type="text/css">
@@ -547,19 +547,19 @@ require("connect.php");
                             </div>
                             <div class="white-panel">
                                 <?php
-                                    include "newGallery/popular.php";
+                                include "newGallery/popular.php";
                                 ?>
                             </div>
-<!--                            <div class="html5gallery" data-skin="horizontal" data-width="320" data-height="272" data-responsive="true">-->
-<!--                                <a href="img/culinary/cancang.jpg"  title="Cancang"><img-->
-<!--                                            src="img/culinary/cancang.jpg" onclick="recKul('11')" alt="Cancang"></a>-->
-<!--                                <a href="img/culinary/itiak.jpg" title="Guali Itiak Lado Mudo" onclick="recKul('4')"><img-->
-<!--                                            src="img/culinary/itiak.jpg"></a>-->
-<!--                                <a href="img/culinary/nasikapau.jpg" title="Nasi Kapau" onclick="recKul('22')"><img-->
-<!--                                            src="img/culinary/nasikapau.jpg"></a>-->
-<!--                                <a href="img/culinary/tmbng.jpg" title="Tambungsu" onclick="recKul('3')"><img-->
-<!--                                            src="img/culinary/tmbng.jpg"></a>-->
-<!--                            </div>-->
+                            <!--                            <div class="html5gallery" data-skin="horizontal" data-width="320" data-height="272" data-responsive="true">-->
+                            <!--                                <a href="img/culinary/cancang.jpg"  title="Cancang"><img-->
+                            <!--                                            src="img/culinary/cancang.jpg" onclick="recKul('11')" alt="Cancang"></a>-->
+                            <!--                                <a href="img/culinary/itiak.jpg" title="Guali Itiak Lado Mudo" onclick="recKul('4')"><img-->
+                            <!--                                            src="img/culinary/itiak.jpg"></a>-->
+                            <!--                                <a href="img/culinary/nasikapau.jpg" title="Nasi Kapau" onclick="recKul('22')"><img-->
+                            <!--                                            src="img/culinary/nasikapau.jpg"></a>-->
+                            <!--                                <a href="img/culinary/tmbng.jpg" title="Tambungsu" onclick="recKul('3')"><img-->
+                            <!--                                            src="img/culinary/tmbng.jpg"></a>-->
+                            <!--                            </div>-->
                         </div>
                     </section>
                 </div>
@@ -570,57 +570,56 @@ require("connect.php");
                             <!-- <h4><u><b>Object Arround</b></u></h4> -->
                             <a class="btn btn-compose">Object Arround</a>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6 col-xs-6"></div>
-                        </div>
-                        <div style="text-align:left;margin:10px; color:black;">
+                        <div style="text-align:left; margin: 10px; color:black;">
                             <!--img src="assets/img/product.png" width="120"-->
-                            <div class="checkbox">
-                                <label>
-                                    <input id="check_tw" type="checkbox">
-                                    Tempat Wisata
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input id="check_i" type="checkbox">
-                                    Industri
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input id="check_m" type="checkbox" value="">
-                                    Masjid
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input id="check_oo" type="checkbox" value="">
-                                    Oleh - oleh
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input id="check_k" type="checkbox" value="">
-                                    Kuliner
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input id="check_h" type="checkbox" value="">
-                                    Hotel
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input id="check_res" type="checkbox" value="">
-                                    Restaurant
-                                </label>
+                            <div style="padding: 10px">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="check_tw" type="checkbox">
+                                        Tempat Wisata
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="check_i" type="checkbox">
+                                        Industri
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="check_m" type="checkbox" value="">
+                                        Masjid
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="check_oo" type="checkbox" value="">
+                                        Oleh - oleh
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="check_k" type="checkbox" value="">
+                                        Kuliner
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="check_h" type="checkbox" value="">
+                                        Hotel
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="check_res" type="checkbox" value="">
+                                        Restaurant
+                                    </label>
+                                </div>
+                                <!--RADIUS-->
+                                <label for="inputradius">Radius : </label>
+                                <label id="nilaiiiii">0</label> m
                             </div>
 
-                            <!--RADIUS-->
-                            <label for="inputradius">Radius : </label>
-                            <label id="nilaiiiii">0</label> m
                             <script>
                                 function cek() {
                                     document.getElementById('nilaiiiii').innerHTML = document.getElementById('inputradius').value * 100
@@ -654,7 +653,7 @@ require("connect.php");
 
                 <div class="col-lg-4 ds" id="selectkulll" style="display:none;">
                     <!-- <h3 style="font-size:16px">Select Culinary</h3> -->
-                    <a class="btn btn-compose">Select Culinary</a>
+                    <button class="btn btn-compose">Select Culinary</button>
                     <div class="panel box-v3">
                         <ul class="sub">
                             <div id="forml">

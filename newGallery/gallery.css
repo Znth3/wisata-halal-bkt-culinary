@@ -68,9 +68,11 @@
 .caption-container {
     text-align: center;
     background-color: #222;
-    padding: 2px 16px;
-    margin-top: 10px;
     color: white;
+}
+
+#caption{
+    margin: 0px;
 }
 
 .rowG:after {
@@ -82,7 +84,8 @@
 
 .rowG{
     background-color: #292c31;
-    padding-bottom: 3%;
+    margin-top: 5%;
+    align-content: center;
 }
 
 /* Six columns side by side */
@@ -90,9 +93,11 @@
     background-color: #292c31;
     float: left;
     width: 20%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
+    margin: 4% 1%;
+}
+
+.column-group{
+    margin-left: 11%;
 }
 
 /* Add a transparency effect for thumnbail images */
