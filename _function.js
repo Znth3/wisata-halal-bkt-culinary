@@ -518,17 +518,17 @@ function detailangkot(id_angkot, lat, lng, lat1, lng1) {
                 var longitude = rows.features[i].properties.longitude;
                 var destination = rows.features[i].properties.destination;
                 var track = rows.features[i].properties.track;
-                var route_color = rows.features[i].properties.route_color;
+                var route_color = 'red';
                 console.log(id);
 
                 tampilrute(id, latitude, longitude, route_color);
-                var centerBaru = new google.maps.LatLng(latitude, longitude);
-                map.setCenter(centerBaru);
-                var infowindow = new google.maps.InfoWindow({
-                    position: centerBaru,
-                    content: "<bold>INFORMASI</bold><br>Kode Trayek: " + id + "<br>Jurusan: " + destination + "<br>Jalur Angkot: " + track + "",
-                });
-                infowindow.open(map);
+                // var centerBaru = new google.maps.LatLng(latitude, longitude);
+                // map.setCenter(centerBaru);
+                // var infowindow = new google.maps.InfoWindow({
+                //     position: centerBaru,
+                //     content: "<bold>Information</bold><br>Kode Trayek: " + id + "<br>Jurusan: " + destination + "<br>Jalur Angkot: " + track + "",
+                // });
+                // infowindow.open(map);
                 route_sekitar(lat, lng, lat1, lng1);
 
             }
@@ -590,7 +590,7 @@ function tampilrute(id_angkot, latitude, longitude, route_color) {
     });
     ja.setMap(map);
     angkot.push(ja);
-    map.setZoom(18);
+    map.setZoom(15);
 }
 
 
@@ -1173,7 +1173,7 @@ function kulAngkot(id_angkot1122) {
     $('#tampillistangkotik').empty();
     $('#hasildet').hide();
     $('#hasilrute').hide();
-    $('#tampillistangkotik').append("<thead><th>No Angkot</th><th colspan='2'>Action</th></thead>");
+    $('#tampillistangkotik').append("<thead><th>Destination</th><th align='center' colspan='2'>Action</th></thead>");
     $.ajax({
         url: server + '/_angkot_culinary.php?id=' + id_angkot1122,
         data: "",
@@ -1185,16 +1185,17 @@ function kulAngkot(id_angkot1122) {
                 for (var i in rows) {
                     var row = rows[i];
                     var id_angkot = row.id;
-                    var route_color = row.route_color;
+                    var route_color = 'red';
+                    var destination = row.destination;
                     var name = row.name;
                     var lat = row.latitude;
                     var lon = row.longitude;
                     console.log(id_angkot);
                     listgeom(id_angkot);
-                    tampilrute(id_angkot, lat, lon, route_color);
+                    // tampilrute(id_angkot, lat, lon, route_color);
                     centerBaru = new google.maps.LatLng(lat, lon);
                     map.setCenter(centerBaru);
-                    map.setZoom(18);
+                    map.setZoom(14);
                     var marker = new google.maps.Marker({
                         position: centerBaru,
                         icon: 'assets/img/cul.png',
@@ -1211,11 +1212,31 @@ function kulAngkot(id_angkot1122) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + id_angkot + "</td><td><a role='button' class='btn btn-success' onclick='detailangkot(\"" + id_angkot + "\")'>Lihat</a></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
                 }
             }
         }
     });
+}
+
+function infoAngkot(id){
+    document.getElementById('md_title').innerHTML="Info";
+    console.log(server+'_data_angkot_1.php?cari='+id);
+    $.ajax({url: server+'_data_angkot_1.php?cari='+id, data: "", dataType: 'json', success: function(rows){
+            for (var i in rows.data){
+                var row = rows.data[i];
+                var id = row.id;
+                var destination = row.destination;
+                var track = row.track;
+                var cost = row.cost;
+                var number = row.number;
+                var color = row.color;
+                console.log(destination);
+                document.getElementById('md_body').innerHTML="<h2>"+destination+"</h2><br><div style='margin-left:20px'>Track: "+track+"<br>Cost: "+cost+"<br>number: "+number+"<br>Color: "+color+"</div>";
+            }//end for
+
+            $('#myModal').modal('show');
+        }});//end ajax
 }
 
 function ikangkot(id_angkot1122442, lat1, lng1) {
@@ -2221,10 +2242,11 @@ function aktifkanRadius() {
         restaurant_sekitar(rad_lat, rad_lng, rad);
         $("#hasilcarirestaurant1").show();
     }
-    if (!document.getElementById("check_i").checked && !document.getElementById("check_k").checked && !document.getElementById("check_m").checked && !document.getElementById("check_oo").checked && !document.getElementById("check_tw").checked && !document.getElementById("check_h").checked && !document.getElementById("check_r").checked) {
-        document.getElementById('modal_title').innerHTML = "Info";
-        document.getElementById('modal_body').innerHTML = "Pilih salah satu objek terlebih dahulu";
-        $('#myModal').modal('show');
+    if (!document.getElementById("check_i").checked && !document.getElementById("check_k").checked && !document.getElementById("check_m").checked && !document.getElementById("check_oo").checked && !document.getElementById("check_tw").checked && !document.getElementById("check_h").checked && !document.getElementById("check_res").checked) {
+        document.getElementById('modal_title').innerHTML = "Information";
+        document.getElementById('modal_body').innerHTML = "Please Choose Object";
+        $('#mySmallModal').modal('toggle');
+        $('#view_table_sekitar').hide();
     } else {
         $('#view_table_sekitar').show();
     }
