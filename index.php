@@ -396,6 +396,45 @@ require("connect.php");
                         </div>
                     </div>
 
+                    <!-- DATA TABLE OBJEK SEKITAR-->
+                    <div id="view_table_sekitar" class="col-lg-6 col-md-4 col-sm-4 ds" style="display:none">
+                        <div class="white-panel pns" style="height:510px">
+                            <div class="white-header"
+                                 style="height:40px;margin:20px;margin-top:0px;background:white;color:black">
+                                <h5 class="btn btn-compose">Search Results Object Around</h5>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-6"></div>
+                            </div>
+                            <div style="height:410px; margin:20px; overflow-y: scroll;">
+                                <table id="hasilcarihotel1" class="table table-bordered">
+                                    <tbody id='hasilcarihotel' style='color:black'></tbody>
+                                </table>
+                                <table id="hasilcariobj1" class="table table-bordered">
+                                    <tbody id='hasilcariobj' style='color:black'></tbody>
+                                </table>
+                                <table id="hasilcarimosque1" class="table table-bordered">
+                                    <tbody id='hasilcarimosque' style='color:black'></tbody>
+                                </table>
+                                <table id="hasilcarisouv1" class="table table-bordered">
+                                    <tbody id='hasilcarisouv' style='color:black'></tbody>
+                                </table>
+                                <table id="hasilcariculi1" class="table table-bordered">
+                                    <tbody id='hasilcariculi' style='color:black'></tbody>
+                                </table>
+                                <table id="hasilcariind1" class="table table-bordered">
+                                    <tbody id='hasilcariind' style='color:black'></tbody>
+                                </table>
+                                <table id="hasilcarirestaurant1" class="table table-bordered">
+                                    <tbody id='hasilcarirestaurant' style='color:black'></tbody>
+                                </table>
+                                <table id="table_angkot" class="table table-bordered">
+                                    <tbody id='table_kanan_angkot' style='color:black'></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!-- /col-md-12 -->
+
                     <div class="col-lg-4 ds" id="tampilangkotsekitarik" style="display:none;">
 
                         <!-- <h3 style="font-size:16px">Angkot Information</h3> -->
@@ -406,6 +445,7 @@ require("connect.php");
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-4 ds" id="hasilmosque" style="display:none;">
                         <!-- <div class="col-md-12 padding-0" style="display:none;"> -->
                         <!-- <h3 style="font-size:16px">Mosque Information</h3> -->
