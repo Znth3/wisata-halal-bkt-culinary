@@ -1219,11 +1219,12 @@ function kulAngkot(id_angkot1122) {
     });
 }
 
-function infoAngkot(id){
-    document.getElementById('md_title').innerHTML="Info";
-    console.log(server+'_data_angkot_1.php?cari='+id);
-    $.ajax({url: server+'_data_angkot_1.php?cari='+id, data: "", dataType: 'json', success: function(rows){
-            for (var i in rows.data){
+function infoAngkot(id) {
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_angkot_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_angkot_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
                 var row = rows.data[i];
                 var id = row.id;
                 var destination = row.destination;
@@ -1232,11 +1233,12 @@ function infoAngkot(id){
                 var number = row.number;
                 var color = row.color;
                 console.log(destination);
-                document.getElementById('md_body').innerHTML="<h2>"+destination+"</h2><br><div style='margin-left:20px'>Track: "+track+"<br>Cost: "+cost+"<br>number: "+number+"<br>Color: "+color+"</div>";
+                document.getElementById('md_body').innerHTML = "<h2>" + destination + "</h2><br><div style='margin-left:20px'>Track: " + track + "<br>Cost: " + cost + "<br>number: " + number + "<br>Color: " + color + "</div>";
             }//end for
 
             $('#myModal').modal('show');
-        }});//end ajax
+        }
+    });//end ajax
 }
 
 function ikangkot(id_angkot1122442, lat1, lng1) {
@@ -1919,7 +1921,7 @@ function industri_sekitar(latitude, longitude, rad) { //INDUSTRI SEKITAR
                 });
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
-                $('#hasilcariind').append("<tr><td>" + name + "</td><td align='center'><button role='button' style='margin:2px' class='btn btn-success fa fa-info' onclick='detailinfoik(\"" + id + "\")'></button><button role='button' class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='ikangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcariind').append("<tr><td>" + name + "</td><td align='center'><button role='button' style='margin:2px' class='btn btn-success fa fa-info' onclick='modal_small_industry(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + latitude + "\",\"" + longitude + "\")'></button><button role='button' class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='ikangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -1956,7 +1958,7 @@ function restaurant_sekitar(latitude, longitude, rad) { //RESTORAN SEKITAR
                 });
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
-                $('#hasilcarirestaurant').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='detailinforestaurant(\"" + id + "\")'></button><button style='margin:2px' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='restaurantangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcarirestaurant').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_restaurant(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + latitude + "\",\"" + longitude + "\")'></button><button style='margin:2px' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='restaurantangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2001,7 +2003,7 @@ function kuliner_sekitar(latitude, longitude, rad) { //KULINER SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcariculi').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='detculi(\"" + id + "\")'></button><button role='button' style='margin:2px' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcariculi').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='detculi(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + latitude + "\",\"" + longitude + "\")'></button><button role='button' style='margin:2px' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2040,7 +2042,7 @@ function masjid_sekitar(latitude, longitude, rad) { // MASJID SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcarimosque').append("<tr><td>" + name + "</td><td><div align='center'><button class='btn btn-success fa fa-info' style='margin:2px' onclick='detailinfomosque(\"" + id + "\")'></button><button class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='worshipangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></div></td></tr>");
+                $('#hasilcarimosque').append("<tr><td>" + name + "</td><td><div align='center'><button class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_masjid(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + latitude + "\",\"" + longitude + "\")'></button><button class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='worshipangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></div></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2080,7 +2082,7 @@ function oleholeh_sekitar(latitude, longitude, rad) { // OLEH-OLEH SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcarisouv').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='detailinfosou(\"" + id + "\")'></button><button class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='souangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcarisouv').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_oo(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + latitude + "\",\"" + longitude + "\")'></button><button class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='souangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2121,7 +2123,7 @@ function tw_sekitar(latitude, longitude, rad) { // TEMPAT WISATA SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcariobj').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='detailinfoobj(\"" + id + "\")'></button><button style='margin:2px' role='button' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' onclick='owangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcariobj').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_tw(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + latitude + "\",\"" + longitude + "\")'></button><button style='margin:2px' role='button' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' onclick='owangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2163,7 +2165,7 @@ function h_sekitar(latitude, longitude, rad) { // TEMPAT WISATA SEKITAR
                 map.setCenter(centerBaru);
                 console.log(rad);
 
-                $('#hasilcarihotel').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='detailinfohotel(\"" + id + "\")'></button><button role='button' class='btn btn-success fa fa-road'   onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='hotelangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcarihotel').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_hotel(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + latitude + "\",\"" + longitude + "\")'></button><button role='button' class='btn btn-success fa fa-road'   onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-danger fa fa-taxi' style='margin:2px' onclick='hotelangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2459,3 +2461,282 @@ function viewprice() {
         });
     }
 }
+
+/*Modal will Appear when information symbol button is pressed in Result of Object Around with function below*/
+
+function modal_hotel(id) { // DATA HOTEL
+
+    //DATA HOTEL
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_hotel_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_hotel_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
+                var row = rows.data[i];
+                var id = row.id;
+                var name = row.name;
+                var address = row.address;
+                var cp = row.cp;
+                var ktp = row.ktp;
+                var marriage_book = row.marriage_book;
+                var mushalla = row.mushalla;
+                var type_hotel = row.type_hotel;
+                var lat = row.lat;
+                var lng = row.lng;
+
+                if (mushalla == 1) {
+                    mushalla = "Ada";
+                } else {
+                    mushalla = "Tidak Ada";
+                }
+                console.log(name);
+                var syarat = "-";
+                if (marriage_book == 1 && ktp == 1) {
+                    syarat = "Marriage Book & KTP";
+                } else if (marriage_book == 1) {
+                    syarat = "Marriage Book";
+                } else if (ktp == 1) {
+                    syarat = "KTP";
+                }
+                document.getElementById('md_body').innerHTML = "<h2>" + name + "</h2><h4>" + type_hotel + "</h4><br><div style='margin-left:20px'>Address: " + address + "<br>Cp: " + cp + "<br>Mushalla: " + mushalla + "<br>Requirement: " + syarat + "</div>";
+            }//end for
+
+            //FASILITAS HOTEL
+            var isi = "<br><b style='margin-left:20px'>Fasility</b> <br><ol>";
+            for (var i in rows.fasilitas) {
+                var row = rows.fasilitas[i];
+                var id = row.id;
+                var name = row.name;
+                console.log(name);
+                isi = isi + "<li>" + name + "</li>";
+            }//end for
+            isi = isi + "</ol>";
+            $('#md_body').append(isi);
+
+            //KAMAR HOTEL
+            var isi = "<b style='margin-left:20px'>Room</b> <br><ol>";
+            for (var i in rows.kamar) {
+                var row = rows.kamar[i];
+                var id = row.id;
+                var name = row.name;
+                var price = row.price;
+                console.log(name);
+                isi = isi + "<li>" + name + " - " + price + "</li>";
+            }//end for
+            isi = isi + "</ol>";
+            $('#md_body').append(isi);
+
+            $('#myModal').modal('show');
+        }
+    });//end ajax
+}
+
+
+function modal_small_industry(id) {  // DATA INDUSTRY
+
+    //DATA SMALL INDUSTRY
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_small_industry_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_small_industry_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
+                var row = rows.data[i];
+                var id = row.id;
+                var name = row.name;
+                var owner = row.owner;
+                var address = row.address;
+                var cp = row.cp;
+                var employee = row.employee;
+                var type_industry = row.type_industry;
+                var lat = row.lat;
+                var lng = row.lng;
+                console.log(name);
+                document.getElementById('md_body').innerHTML = "<h2>" + name + "</h2><h4>" + type_industry + "</h4><br><div style='margin-left:20px'>Address: " + address + "<br>Cp: " + cp + "<br>Employee: " + employee + "<br>Industry Type: " + type_industry + "</div>";
+            }//end for
+
+            $('#myModal').modal('show');
+        }
+    });//end ajax
+
+}
+
+function modal_kuliner(id) { //DATA KULINER
+
+    //DATA KULINER
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_culinary_place_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_culinary_place_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
+                var row = rows.data[i];
+                var id = row.id;
+                var name = row.name;
+                var cp = row.cp;
+                var address = row.address;
+                var capacity = row.capacity;
+                var open = row.open;
+                var close = row.close;
+                var employee = row.employee;
+                var lat = row.lat;
+                var lng = row.lng;
+                console.log(name);
+                document.getElementById('md_body').innerHTML = "<h2>" + name + "</h2><br><div style='margin-left:20px'>Address: " + address + "<br>Cp: " + cp + "<br>Capacity: " + capacity + "<br>Open: " + open + "<br>Close: " + close + "<br>Employee: " + employee + "</div>";
+            }//end for
+
+            $('#myModal').modal('show');
+        }
+    });//end ajax
+
+}
+
+function modal_masjid(id) {  //DATA MASJID
+
+    //DATA MASJID
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_worship_place_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_worship_place_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
+                var row = rows.data[i];
+                var id = row.id;
+                var name = row.name;
+                var address = row.address;
+                var land_size = row.land_size;
+                var park_area_size = row.park_area_size;
+                var building_size = row.building_size;
+                var capacity = row.capacity;
+                var est = row.est;
+                var last_renovation = row.last_renovation;
+                var jamaah = row.jamaah;
+                var imam = row.imam;
+                var teenager = row.teenager;
+                var category = row.category;
+                var lat = row.lat;
+                var lng = row.lng;
+                console.log(name);
+                document.getElementById('md_body').innerHTML = "<h2>" + name + "</h2><br><div style='margin-left:20px'>Address: " + address + "<br>Land Size: " + land_size + "<br>Park Area: " + park_area_size + "<br>Building Size: " + building_size + "<br>Capacity: " + capacity + "<br>Est: " + est + "<br>Renovation: " + last_renovation + "<br>Jamaah: " + jamaah + "<br>Imam: " + imam + "<br>Teenager: " + teenager + "<br>Category: " + category + "</div>";
+            }//end for
+
+            $('#myModal').modal('show');
+        }
+    });//end ajax
+
+}
+
+function modal_oo(id) {  //DATA SOUVENIR
+
+    //DATA SOUVENIR
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_souvenir_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_souvenir_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
+                var row = rows.data[i];
+                var id = row.id;
+                var name = row.name;
+                var owner = row.owner;
+                var cp = row.cp;
+                var address = row.address;
+                var employee = row.employee;
+                var type_souvenir = row.type_souvenir;
+                var lat = row.lat;
+                var lng = row.lng;
+                console.log(name);
+                document.getElementById('md_body').innerHTML = "<h2>" + name + "</h2><br><div style='margin-left:20px'>Address: " + address + "<br>Cp: " + cp + "<br>Owner: " + owner + "<br>Employee: " + employee + "<br>Type: " + type_souvenir + "</div>";
+            }//end for
+
+            $('#myModal').modal('show');
+        }
+    });//end ajax
+}
+
+function modal_tw(id) {  // DATA TOURISM
+
+    //DATA TOURISM
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_tourism_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_tourism_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
+                var row = rows.data[i];
+                var id = row.id;
+                var name = row.name;
+                var address = row.address;
+                var open = row.open;
+                var close = row.close;
+                var ticket = row.ticket;
+                var tourism_type = row.tourism_type;
+                var lat = row.latitude;
+                var lng = row.longitude;
+                console.log(name);
+                document.getElementById('md_body').innerHTML = "<h2>" + name + "</h2><h4>" + tourism_type + "</h4><br><div style='margin-left:20px'>Address: " + address + "<br>Open: " + open + "<br>Close: " + close + "<br>Ticket: " + ticket + "</div>";
+            }//end for
+
+            //FASILITAS HOTEL
+            var isi = "<br><b style='margin-left:20px'>Fasility</b> <br><ol>";
+            for (var i in rows.fasilitas) {
+                var row = rows.fasilitas[i];
+                var id = row.id;
+                var name = row.name;
+                console.log(name);
+                isi = isi + "<li>" + name + "</li>";
+            }//end for
+            isi = isi + "</ol>";
+            $('#md_body').append(isi);
+
+            $('#myModal').modal('show');
+
+        }
+    });//end ajax
+}
+
+function modal_restaurant(id) {    // DATA RESTAURANT
+
+    //DATA TOURISM
+    document.getElementById('md_title').innerHTML = "Info";
+    console.log(server + '_data_restaurant_1.php?cari=' + id);
+    $.ajax({
+        url: server + '_data_restaurant_1.php?cari=' + id, data: "", dataType: 'json', success: function (rows) {
+            for (var i in rows.data) {
+                var row = rows.data[i];
+                var id = row.id;
+                var name = row.name;
+                var cp = row.cp;
+                var address = row.address;
+                var open = row.open;
+                var close = row.close;
+                var capacity = row.capacity;
+                var employee = row.employee;
+                var mushalla = row.mushalla;
+                var park_area = row.park_area;
+                var bathroom = row.bathroom;
+                var type_restaurant = row.type_restaurant;
+                var lat = row.latitude;
+                var lng = row.longitude;
+
+                if (mushalla == 1) {
+                    mushalla = "Ada";
+                } else {
+                    mushalla = "Tidak ada"
+                }
+                if (park_area == 1) {
+                    park_area = "Ada";
+                } else {
+                    park_area = "Tidak ada"
+                }
+                if (bathroom == 1) {
+                    bathroom = "Ada";
+                } else {
+                    bathroom = "Tidak ada"
+                }
+
+                console.log(name);
+                document.getElementById('md_body').innerHTML = "<h2>" + name + "</h2><h4>" + type_restaurant + "</h4><br><div style='margin-left:20px'>Address: " + address + "<br>Open: " + open + "<br>Close: " + close + "<br>Capacity: " + capacity + "<br>Employee: " + employee + "<br>Mushalla: " + mushalla + "<br>Park Area: " + park_area + "<br>Bathroom: " + bathroom + "</div>";
+            }//end for
+
+            $('#myModal').modal('show');
+        }
+    });//end ajax
+}
+
+/*end of modal function that trigger modal when information button is pressed on result of object around*/ 
