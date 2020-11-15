@@ -1899,7 +1899,7 @@ function tampil_sekitar(latitude, longitude, namaa) {
 function industri_sekitar(latitude, longitude, rad) { //INDUSTRI SEKITAR
     $('#hasilcariind').empty();
     $('#hasilcariind1').show();
-    $('#hasilcariind').append("<tr><th class='centered'>Industry Name</th><th class='centered'>Aksi</th></tr>");
+    $('#hasilcariind').append("<tr><th class='centered'>Industry Name</th><th class='centered'>Action</th></tr>");
     $.ajax({
         url: server + '_sekitar_industri.php?lat=' + latitude + '&long=' + longitude + '&rad=' + rad,
         data: "",
@@ -1936,7 +1936,7 @@ function industri_sekitar(latitude, longitude, rad) { //INDUSTRI SEKITAR
 function restaurant_sekitar(latitude, longitude, rad) { //RESTORAN SEKITAR
     $('#hasilcarirestaurant').empty();
     $('#hasilcarirestaurant1').show();
-    $('#hasilcarirestaurant').append("<tr><th class='centered'>Restaurant Name</th><th class='centered'>Aksi</th></tr>>");
+    $('#hasilcarirestaurant').append("<tr><th class='centered'>Restaurant Name</th><th class='centered'>Action</th></tr>>");
     $.ajax({
         url: server + '_sekitar_restaurant.php?lat=' + latitude + '&long=' + longitude + '&rad=' + rad,
         data: "",

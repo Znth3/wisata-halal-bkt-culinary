@@ -657,13 +657,13 @@ require("connect.php");
                                 <div class="checkbox">
                                     <label>
                                         <input id="check_tw" type="checkbox">
-                                        Tempat Wisata
+                                        Tourism
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
                                         <input id="check_i" type="checkbox">
-                                        Industri
+                                        Small Industry
                                     </label>
                                 </div>
                                 <div class="checkbox">
@@ -675,13 +675,13 @@ require("connect.php");
                                 <div class="checkbox">
                                     <label>
                                         <input id="check_oo" type="checkbox" value="">
-                                        Oleh - oleh
+                                        Souvenit
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
                                         <input id="check_k" type="checkbox" value="">
-                                        Kuliner
+                                        Culinary
                                     </label>
                                 </div>
                                 <div class="checkbox">
