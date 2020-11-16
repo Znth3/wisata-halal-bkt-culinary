@@ -29,7 +29,7 @@ if(strpos($id,"H") !== false){
 } else if(strpos($id,"IK") !== false){
 	$sql = "insert into review(name,id_ik,comment,tanggal,id_review) values('$nama','$id','$comment','$tanggal','$id_review')";
 } else if(strpos($id,"RM") !== false){
-	$sql = "insert into review(name,id_kuliner,comment,tanggal,id_review, rating) values('$nama','$id','$comment','$tanggal','$id_review', '$rating')";
+	$sql = "insert into review(name,id_kuliner,comment,tanggal,id_review) values('$nama','$id','$comment','$tanggal','$id_review')";
 } else if(strpos($id,"tw") !== false){
 	$sql = "insert into review(name,id_ow,comment,tanggal,id_review) values('$nama','$id','$comment','$tanggal','$id_review')";
 }

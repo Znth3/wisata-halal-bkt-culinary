@@ -101,17 +101,16 @@ while($row = pg_fetch_array($hasil)){
 				</div><!-- /.box-footer-->
             </div>
 
-
-	<div class="col-lg-1 col-xs-1">
-	</div>
-
-	<div class="col-lg-3 col-xs-3" style="background-color:#f2f2f2">
+<div class="col-lg-1"></div>
+	<div class="col-md-3 col-xs-3" style="background-color:#f2f2f2">
 		<div class="box">
 			<div class="box-header with-border">
 			  <h3 class="box-title">Foto</h3>
 			  <h4 class="box-title" style="text-transform:capitalize;"><b> <?php echo $name ?></b></h4>
 			</div>
-			<div class="box-body">
+
+			<div class="html5gallery" data-autoslide="true" data-responsive="true" data-height="1"
+                 data-width="2">
 					<?php $id=$_GET['id'] ?>
 							<?php
 							$querysearch="SELECT gallery_culinary FROM culinary_gallery where id='$id'";
@@ -121,7 +120,7 @@ while($row = pg_fetch_array($hasil)){
 							 while($baris = pg_fetch_array($hasil))
 							 {
 							 	?>
-										<image src="../img/<?php echo $baris['gallery_culinary']; ?>" style="width:30%;">
+										<img src="../img/<?php echo $baris['gallery_culinary']; ?>" style="width:30%;">
 									<?php
 							 }
 							?>

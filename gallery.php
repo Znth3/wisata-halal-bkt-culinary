@@ -292,8 +292,7 @@ session_start();
                                             </div>
 
                                             <div class="white-panel">
-                                                <div class="html5gallery" data-autoslide="true" data-responsive="true" data-height="1" data-theme="horizontal"
-                                                     data-width="2">
+                                                <div class="html5gallery" data-autoslide="true" data-responsive="ture">
                                                     <?php
 
                                                     if (strpos($id, "H") !== false) {  //Hotel
