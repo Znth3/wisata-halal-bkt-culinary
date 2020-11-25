@@ -2171,7 +2171,7 @@ function h_sekitar(latitude, longitude, rad) { // TEMPAT WISATA SEKITAR
                 map.setCenter(centerBaru);
                 console.log(rad);
 
-                $('#hasilcarihotel').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_hotel(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button role='button' class='btn btn-success fa fa-road'   onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' style='margin:2px' onclick='hotelangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcarihotel').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_hotel(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button>&nbsp;<button role='button' class='btn btn-success fa fa-road'   onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' style='margin:2px' onclick='hotelangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax

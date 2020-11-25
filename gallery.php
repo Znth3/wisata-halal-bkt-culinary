@@ -25,6 +25,29 @@ session_start();
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/slider.css" rel="stylesheet">
+
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="assets/js/chart-master/Chart.js"></script>
+    <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" type="text/cs" href="assets/js/bootstrap-timepicker/compiled/timepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datetimepicker/datertimepicker.html"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-slider.css" type="text/css">
+    <link rel="stylesheet" href="newGallery/gallery.css">
+
     <!--  Slide -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -413,12 +436,11 @@ session_start();
 
                                             <a type="button" onclick="lokasimanual()" class="btn btn-success fa fa-map-marker"
                                                     data-toggle="tooltip" id="posmanual" title="Posisi Manual"
-                                                    style="margin-right: 1px;"><i class=""></i>
+                                                    style="margin-right: 1px;">
                                             </a>
                                             <label id="tombol">
                                                 <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-success fa fa-eye"
-                                                   data-toggle="tooltip" title="Legenda" style="margin-right: 1px;"><i
-                                                            class=""></i>
+                                                   data-toggle="tooltip" title="Legenda">
                                                 </a>
                                         </header>
                                         <div class="row">

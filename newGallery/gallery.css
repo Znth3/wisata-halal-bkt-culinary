@@ -89,15 +89,12 @@
 
 /* Six columns side by side */
 .column {
-    background-color: #292c31;
+    background-color: #0e2e42;
     float: left;
-    width: 20%;
-    margin: 4% 1%;
+    width: 23%;
+    margin: 3px;
 }
 
-.column-group{
-    margin-left: 11%;
-}
 
 /* Add a transparency effect for thumnbail images */
 .demo {

@@ -12,10 +12,7 @@ require("connect.php");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title>Improved Culinary</title>
     <!--      API here-->
-<!--    <script type="text/javascript"-->
-<!--            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>-->
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>
+   
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -670,13 +667,13 @@ require("connect.php");
                                 <div class="checkbox">
                                     <label>
                                         <input id="check_m" type="checkbox" value="">
-                                        Masjid
+                                        Worship
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
                                         <input id="check_oo" type="checkbox" value="">
-                                        Souvenit
+                                        Souvenir
                                     </label>
                                 </div>
                                 <div class="checkbox">

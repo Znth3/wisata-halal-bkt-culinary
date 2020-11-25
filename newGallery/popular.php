@@ -7,22 +7,22 @@
         <!-- Full-width images with number text -->
         <div class="mySlides">
             <div class="numbertext">1 / 6</div>
-            <img src="img/culinary/cancang.jpg" onclick="recKul('11')" style="width:100%; height: 50%">
+            <img src="img/culinary/cancang.jpg" onclick="recKul('11')" style="width:284px; height: 250px">
         </div>
 
         <div class="mySlides ">
             <div class="numbertext">2 / 6</div>
-            <img src="img/culinary/itiak.jpg" onclick="recKul('4')" style="width:100%">
+            <img src="img/culinary/itiak.jpg" onclick="recKul('4')" style="width:284px; height: 250px">
         </div>
 
         <div class="mySlides ">
             <div class="numbertext">3 / 6</div>
-            <img src="img/culinary/nasikapau.jpg" onclick="recKul('22')" style="width:100%; height: 250px">
+            <img src="img/culinary/nasikapau.jpg" onclick="recKul('22')" style="width:284px; height: 250px">
         </div>
 
         <div class="mySlides ">
             <div class="numbertext">4 / 6</div>
-            <img src="img/culinary/tmbng.jpg" onclick="recKul('3')" style="width:100%">
+            <img src="img/culinary/tmbng.jpg" onclick="recKul('3')" style="width:284px; height: 250px">
         </div>
         <div class="caption-container">
             <p id="caption"></p>
