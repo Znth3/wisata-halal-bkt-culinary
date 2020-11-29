@@ -1,4 +1,4 @@
-var server = "http://http://iisi-faiz.eastus.cloudapp.azure.com//culinary/";
+var server = "http://iisi-faiz.eastus.cloudapp.azure.com/culinary/";
 var map;
 var markersDua = [];
 var koordinat = 'null'
