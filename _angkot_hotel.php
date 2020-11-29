@@ -2,11 +2,12 @@
     include("connect.php");
     $id = $_GET['id'];
 
-    $result=  pg_query("SELECT detail_hotel.id_hotel,angkot.id,angkot.route_color,detail_hotel.id_angkot,hotel.name,hotel.id,detail_hotel.lat,detail_hotel.lng,detail_hotel.description, ST_X(ST_Centroid(hotel.geom)) AS longitude, ST_Y(ST_CENTROID(hotel.geom)) As latitude FROM detail_hotel left join angkot on detail_hotel.id_angkot=angkot.id left join hotel on detail_hotel.id_hotel=hotel.id where hotel.id='$id' ");
+    $result=  pg_query("SELECT angkot.destination, detail_hotel.id_hotel,angkot.id,angkot.route_color,detail_hotel.id_angkot,hotel.name,hotel.id,detail_hotel.lat,detail_hotel.lng,detail_hotel.description, ST_X(ST_Centroid(hotel.geom)) AS longitude, ST_Y(ST_CENTROID(hotel.geom)) As latitude FROM detail_hotel left join angkot on detail_hotel.id_angkot=angkot.id left join hotel on detail_hotel.id_hotel=hotel.id where hotel.id='$id' ");
 
         while($baris = pg_fetch_array($result))
             {
                 $id_angkot=$baris['id_angkot'];
+                $destination = $baris['destination'];   
                 $id=$baris['id'];
                 $id=$baris['id'];
                 $name=$baris['name'];

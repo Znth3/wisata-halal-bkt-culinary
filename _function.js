@@ -1,4 +1,4 @@
-var server = "http://iisi-faiz.eastus.cloudapp.azure.com/culinary/";
+var server = "http://http://iisi-faiz.eastus.cloudapp.azure.com//culinary/";
 var map;
 var markersDua = [];
 var koordinat = 'null'
@@ -1255,7 +1255,7 @@ function ikangkot(id_angkot1122442, lat1, lng1) {
     $('#tampilangkotsekitarik').show();
     $('#tampillistangkotik1').show();
     $('#tampillistangkotik').empty();
-    $('#tampillistangkotik').append("<thead><th>No Angkot</th><th colspan='2'>Action</th></thead>");
+    $('#tampillistangkotik').append("<thead><th>Destination</th><th colspan='2'>Action</th></thead>");
     console.log("hh");
     $.ajax({
         url: server + '/_angkot_industri.php?id=' + id_angkot1122442,
@@ -1270,6 +1270,7 @@ function ikangkot(id_angkot1122442, lat1, lng1) {
                     var id = row.id;
                     var id_angkot = row.id_angkot;
                     var route_color = row.route_color;
+                    var destination = row.destination;
                     var lat = row.lat;
                     var lng = row.lng;
                     var description = row.description;
@@ -1299,7 +1300,7 @@ function ikangkot(id_angkot1122442, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + id_angkot + "</td><td><a role='button' class='btn btn-success' onclick='detailangkot(\"" + id_angkot + "\",\"" + lat + "\",\"" + lng + "\",\"" + lat1 + "\",\"" + lng1 + "\")'>Lihat</a></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
                 }
             }
         }
@@ -1314,7 +1315,7 @@ function restaurantangkot(id_angkot1122492, lat1, lng1) {
     $('#tampilangkotsekitarik').show();
     $('#tampillistangkotik1').show();
     $('#tampillistangkotik').empty();
-    $('#tampillistangkotik').append("<thead><th>No Angkot</th><th colspan='2'>Action</th></thead>");
+    $('#tampillistangkotik').append("<thead><th>Destination</th><th colspan='2'>Action</th></thead>");
     console.log("hh");
     $.ajax({
         url: server + '/_angkot_restaurant.php?id=' + id_angkot1122492,
@@ -1333,7 +1334,7 @@ function restaurantangkot(id_angkot1122492, lat1, lng1) {
                     var lng = row.lng;
                     var description = row.description;
                     var name = row.name;
-
+                    var destination = row.destination;
                     var latitude = row.latitude;
                     var longitude = row.longitude;
                     console.log(id_angkot);
@@ -1358,7 +1359,7 @@ function restaurantangkot(id_angkot1122492, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + id_angkot + "</td><td><a role='button' class='btn btn-success' onclick='detailangkot(\"" + id_angkot + "\",\"" + lat + "\",\"" + lng + "\",\"" + lat1 + "\",\"" + lng1 + "\")'>Lihat</a></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
                 }
             }
         }
@@ -1373,7 +1374,7 @@ function souangkot(id_angkot112244, lat1, lng1) {
     $('#tampilangkotsekitarik').show();
     $('#tampillistangkotik1').show();
     $('#tampillistangkotik').empty();
-    $('#tampillistangkotik').append("<thead><th>No Angkot</th><th colspan='2'>Action</th></thead>");
+    $('#tampillistangkotik').append("<thead><th>Destination</th><th colspan='2'>Action</th></thead>");
     console.log("hh");
     $.ajax({
         url: server + '/_angkot_souvenirs.php?id=' + id_angkot112244,
@@ -1391,6 +1392,7 @@ function souangkot(id_angkot112244, lat1, lng1) {
                     var lat = row.lat;
                     var lng = row.lng;
                     var description = row.description;
+                    var destination = row.destination;
                     var name = row.name;
 
                     var latitude = row.latitude;
@@ -1417,7 +1419,7 @@ function souangkot(id_angkot112244, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + id_angkot + "</td><td><a role='button' class='btn btn-success' onclick='detailangkot(\"" + id_angkot + "\",\"" + lat + "\",\"" + lng + "\",\"" + lat1 + "\",\"" + lng1 + "\")'>Lihat</a></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
                 }
             }
         }
@@ -1432,7 +1434,7 @@ function hotelangkot(id_angkot11224436, lat1, lng1) {
     $('#tampilangkotsekitarik').show();
     $('#tampillistangkotik1').show();
     $('#tampillistangkotik').empty();
-    $('#tampillistangkotik').append("<thead><th>No Angkot</th><th colspan='2'>Action</th></thead>");
+    $('#tampillistangkotik').append("<thead><th>Destination</th><th colspan='2'>Action</th></thead>");
     console.log("hh");
     $.ajax({
         url: server + '/_angkot_hotel.php?id=' + id_angkot11224436,
@@ -1450,6 +1452,7 @@ function hotelangkot(id_angkot11224436, lat1, lng1) {
                     var lat = row.lat;
                     var lng = row.lng;
                     var description = row.description;
+                    var destination = row.destination;
                     var name = row.name;
 
                     var latitude = row.latitude;
@@ -1476,7 +1479,7 @@ function hotelangkot(id_angkot11224436, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + id_angkot + "</td><td><a role='button' class='btn btn-success' onclick='detailangkot(\"" + id_angkot + "\",\"" + lat + "\",\"" + lng + "\",\"" + lat1 + "\",\"" + lng1 + "\")'>Lihat</a></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
                 }
             }
         }
@@ -1491,7 +1494,7 @@ function owangkot(id_angkot11224439, lat1, lng1) {
     $('#tampilangkotsekitarik').show();
     $('#tampillistangkotik1').show();
     $('#tampillistangkotik').empty();
-    $('#tampillistangkotik').append("<thead><th>No Angkot</th><th colspan='2'>Action</th></thead>");
+    $('#tampillistangkotik').append("<thead><th>Destination</th><th colspan='2'>Action</th></thead>");
     console.log("hh");
     $.ajax({
         url: server + '/_angkot_ow.php?id=' + id_angkot11224439, data: "", dataType: 'json', success: function (rows) {
@@ -1503,6 +1506,7 @@ function owangkot(id_angkot11224439, lat1, lng1) {
                     var id = row.id;
                     var id_angkot = row.id_angkot;
                     var route_color = row.route_color;
+                    var destination = row.destination;
                     var lat = row.lat;
                     var lng = row.lng;
                     var description = row.description;
@@ -1532,7 +1536,7 @@ function owangkot(id_angkot11224439, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + id_angkot + "</td><td><a role='button' class='btn btn-success' onclick='detailangkot(\"" + id_angkot + "\",\"" + lat + "\",\"" + lng + "\",\"" + lat1 + "\",\"" + lng1 + "\")'>Lihat</a></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
                 }
             }
         }
@@ -1547,7 +1551,7 @@ function worshipangkot(id_angkot11224437, lat1, lng1) {
     $('#tampilangkotsekitarik').show();
     $('#tampillistangkotik1').show();
     $('#tampillistangkotik').empty();
-    $('#tampillistangkotik').append("<thead><th>No Angkot</th><th colspan='2'>Action</th></thead>");
+    $('#tampillistangkotik').append("<thead><th>Destination</th><th colspan='2'>Action</th></thead>");
     console.log("hh");
     $.ajax({
         url: server + '/_angkot_worship.php?id=' + id_angkot11224437,
@@ -1561,6 +1565,7 @@ function worshipangkot(id_angkot11224437, lat1, lng1) {
                     var row = rows[i];
                     var id = row.id;
                     var id_angkot = row.id_angkot;
+                    var destination = row.destination;
                     var route_color = row.route_color;
                     var lat = row.lat;
                     var lng = row.lng;
@@ -1591,7 +1596,7 @@ function worshipangkot(id_angkot11224437, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + id_angkot + "</td><td><a role='button' class='btn btn-success' onclick='detailangkot(\"" + id_angkot + "\",\"" + lat + "\",\"" + lng + "\",\"" + lat1 + "\",\"" + lng1 + "\")'>Lihat</a></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
                 }
             }
         }
