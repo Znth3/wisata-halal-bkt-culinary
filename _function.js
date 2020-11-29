@@ -1,4 +1,4 @@
-var server = "http://localhost/kuliner/";
+var server = "http://localhost/culinary/";
 var map;
 var markersDua = [];
 var koordinat = 'null'
