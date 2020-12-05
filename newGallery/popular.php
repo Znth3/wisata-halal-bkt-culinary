@@ -20,9 +20,14 @@
             <img src="img/culinary/nasikapau.jpg" onclick="recKul('22')" style="width:284px; height: 250px">
         </div>
 
+<!--        <div class="mySlides ">-->
+<!--            <div class="numbertext">4 / 6</div>-->
+<!--            <img src="img/culinary/tmbng.jpg" onclick="recKul('3')" style="width:284px; height: 250px">-->
+<!--        </div>-->
+
         <div class="mySlides ">
-            <div class="numbertext">4 / 6</div>
-            <img src="img/culinary/tmbng.jpg" onclick="recKul('3')" style="width:284px; height: 250px">
+            <div class="numbertext">5 / 6</div>
+            <img src="img/culinary/dendeng.jpg" onclick="recKul('2')" style="width:284px; height: 250px">
         </div>
         <div class="caption-container">
             <p id="caption"></p>
@@ -52,8 +57,12 @@
             <div class="column">
                 <img class="demo cursor" src="img/culinary/nasikapau.jpg" style="width:100%" onclick="currentSlide(3)" alt="Nasi Kapau">
             </div>
+<!--            <div class="column">-->
+<!--                <img class="demo cursor" src="img/culinary/tmbng.jpg" style="width:100%" onclick="currentSlide(4)" alt="Tambungsu">-->
+<!--            </div>-->
+
             <div class="column">
-                <img class="demo cursor" src="img/culinary/tmbng.jpg" style="width:100%" onclick="currentSlide(4)" alt="Tambungsu">
+                <img class="demo cursor" src="img/culinary/dendeng.jpg" style="width:100%" onclick="currentSlide(5)" alt="Dendeng">
             </div>
         </div>
 

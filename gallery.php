@@ -72,7 +72,7 @@ session_start();
     </style>
 
     <script src="assets/js/chart-master/Chart.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgpfxdQ0Ep_nieNjV64u4yXWeSFHAT4BE"></script>
 
     <!-- <script src="../config_public.js"></script> -->
     <script type="text/javascript"
@@ -315,7 +315,7 @@ session_start();
                                             </div>
 
                                             <div class="white-panel">
-                                                <div class="html5gallery" data-autoslide="true" data-responsive="ture">
+                                                <div class="html5gallery" data-autoslide="true" data-responsive="true">
                                                     <?php
 
                                                     if (strpos($id, "H") !== false) {  //Hotel

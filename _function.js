@@ -1,4 +1,4 @@
-var server = "http://iisi-faiz.eastus.cloudapp.azure.com/culinary/";
+var server = "http://localhost/kuliner/";
 var map;
 var markersDua = [];
 var koordinat = 'null'
@@ -527,7 +527,7 @@ function detailangkot(id_angkot, lat, lng, lat1, lng1) {
                 var route_color = 'red';
                 console.log(id);
 
-                tampilrute(id, latitude, longitude, route_color);
+                tampilrute(id, latitude, longitude, route_color='red');
                 // var centerBaru = new google.maps.LatLng(latitude, longitude);
                 // map.setCenter(centerBaru);
                 // var infowindow = new google.maps.InfoWindow({
@@ -687,7 +687,7 @@ function viewkul() {
                     map.setZoom(12);
                     clickMarker(centerBaru, id);
                     map.setCenter(centerBaru);
-                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
+                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info' title='Info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
                 }
             }
             $('#hasilpencarian').append("<h5 class='box-title' id='hasilpencarian'>Result :</h5>" + rows.length);
@@ -841,7 +841,7 @@ function detculi(id14433) {
                 $('#hasilcaridet').append("<tr><td colspan='2'> " + culinary + "</td><td> " + price + "</td></tr>");
                 infowindow = new google.maps.InfoWindow({
                     position: centerBaru,
-                    content: "<center><span style=color:black><b>" + namaa + "</b><br><br><i class='fa fa-map-marker'></i> " + address + "<br><i class='fa fa-phone'></i> " + cp + "<br><i class='fa fa-clock-o'></i> " + open + "-" + close + "</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + namaa + "\")'></a>&nbsp;<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\"" + id + "\")'></a>&nbsp;<a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",
+                    content: "<center><span style=color:black><b>" + namaa + "</b><br><br><i class='fa fa-map-marker'></i> " + address + "<br><i class='fa fa-phone'></i> " + cp + "<br><i class='fa fa-clock-o'></i> " + open + "-" + close + "</span><br><br><a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\"" + id + "\")'></a>&nbsp;<a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + namaa + "\")'></a>&nbsp;<a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",
                     pixelOffset: new google.maps.Size(0, -33)
                 });
                 infoposisi.push(infowindow);
@@ -904,7 +904,7 @@ function detculi_1(id14433) {
 
                 infowindow = new google.maps.InfoWindow({
                     position: centerBaru,
-                    content: "<center><span style=color:black><b>" + namaa + "</b><br><br><i class='fa fa-map-marker'></i> " + address + "<br><i class='fa fa-phone'></i> " + cp + "<br><i class='fa fa-clock-o'></i> " + open + "-" + close + "</span><br><br><a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + namaa + "\")'></a>&nbsp;<a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\"" + id + "\")'></a>&nbsp;<a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",
+                    content: "<center><span style=color:black><b>" + namaa + "</b><br><br><i class='fa fa-map-marker'></i> " + address + "<br><i class='fa fa-phone'></i> " + cp + "<br><i class='fa fa-clock-o'></i> " + open + "-" + close + "</span><br><br><a type='button' title='Info' class='btn btn-success fa fa-info' onclick='gallery(\"" + id + "\")'></a>&nbsp;<a type='button' info='Nearby' title='Nearby' aria-controls='info' class='btn btn-success fa fa-compass' onclick='tampil_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + namaa + "\")'></a>&nbsp;<a type='button' title='Route' class='btn btn-success fa fa-road' onclick='callRoute(centerLokasi,centerBaru);rutetampil()'></a>",
                     pixelOffset: new google.maps.Size(0, -33)
                 });
                 infoposisi.push(infowindow);
@@ -1066,7 +1066,7 @@ function find_kul() //kuliner
                     map.setZoom(15);
                     clickMarker(centerBaru, id);
                     console.log(name);
-                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
+                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info'  data-toggle='' title='Info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
                 }
                 $('#hasilpencarian').append("<h5 class='box-title' id='hasilpencarian'>Result :</h5>" + rows.length);
             }
@@ -1300,7 +1300,7 @@ function ikangkot(id_angkot1122442, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button title='Info' role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' title='Route' onclick='detailangkot(\"" + id_angkot + "\",\""+lat+"\",\""+lng+"\",\""+lat1+"\",\""+lng1+"\")'></button></td></tr>");
                 }
             }
         }
@@ -1359,7 +1359,7 @@ function restaurantangkot(id_angkot1122492, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button title='Info' role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' title='Route' onclick='detailangkot(\"" + id_angkot + "\",\""+lat+"\",\""+lng+"\",\""+lat1+"\",\""+lng1+"\")'></button></td></tr>");
                 }
             }
         }
@@ -1419,7 +1419,7 @@ function souangkot(id_angkot112244, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' title='Info' ></button></td><td><button class='btn btn-success fa fa-road' title='Route' onclick='detailangkot(\"" + id_angkot + "\",\""+lat+"\",\""+lng+"\",\""+lat1+"\",\""+lng1+"\")'></button></td></tr>");
                 }
             }
         }
@@ -1479,7 +1479,7 @@ function hotelangkot(id_angkot11224436, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button title='Info' role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' title='Route' onclick='detailangkot(\"" + id_angkot + "\",\""+lat+"\",\""+lng+"\",\""+lat1+"\",\""+lng1+"\")'></button></td></tr>");
                 }
             }
         }
@@ -1536,7 +1536,7 @@ function owangkot(id_angkot11224439, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button title='Info' role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' title='Route' onclick='detailangkot(\"" + id_angkot + "\",\""+lat+"\",\""+lng+"\",\""+lat1+"\",\""+lng1+"\")'></button></td></tr>");
                 }
             }
         }
@@ -1596,7 +1596,7 @@ function worshipangkot(id_angkot11224437, lat1, lng1) {
                     infoposisi.push(infowindow);
                     infowindow.open(map, marker);
                     console.log(id_angkot);
-                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' onclick='detailangkot(\"" + id_angkot + "\")'></button></td></tr>");
+                    $('#tampillistangkotik').append("<tr><td>" + destination + "</td><td><button title='Info' role='button' onclick='infoAngkot(\"" + id_angkot + "\")' class='btn btn-success fa fa-info' ></button></td><td><button class='btn btn-success fa fa-road' title='Route' onclick='detailangkot(\"" + id_angkot + "\",\""+lat+"\",\""+lng+"\",\""+lat1+"\",\""+lng1+"\")'></button></td></tr>");
                 }
             }
         }
@@ -1691,7 +1691,7 @@ function recKul(id90) {
                     map.setCenter(centerBaru);
                     map.setZoom(14);
                     clickMarker(centerBaru, id);
-                    $('#hasilcari').append("<tr><td>" + nama_tempat_kuliner + "</td><td><a role='button' class='btn btn-success fa fa-info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
+                    $('#hasilcari').append("<tr><td>" + nama_tempat_kuliner + "</td><td><a role='button' class='btn btn-success fa fa-info' title='Info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
                 }
                 $('#hasilpencarian').append("<h5 class='box-title' id='hasilpencarian'>Result :</h5>" + rows.length);
             }
@@ -1731,7 +1731,7 @@ function viewkull() {
                     map.setCenter(centerBaru);
                     map.setZoom(16);
                     clickMarker(centerBaru, id);
-                    $('#hasilcari').append("<tr><td>" + nama_tempat_kuliner + "</td><td><a role='button' class='btn btn-success fa fa-info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
+                    $('#hasilcari').append("<tr><td>" + nama_tempat_kuliner + "</td><td><a role='button' class='btn btn-success fa fa-info' title='Info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
                 }
                 $('#hasilpencarian').append("<h5 class='box-title' id='hasilpencarian'>Result :</h5>" + rows.length);
             }
@@ -1773,7 +1773,7 @@ function viewfas() {
                     map.setCenter(centerBaru);
                     map.setZoom(12);
                     clickMarker(centerBaru, id);
-                    $('#hasilcari').append("<tr><td>" + nama_tempat_kuliner + "</td><td><a role='button' class='btn btn-success fa fa-info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id_facility + "\")'></a></td></tr>");
+                    $('#hasilcari').append("<tr><td>" + nama_tempat_kuliner + "</td><td><a role='button' class='btn btn-success fa fa-info' title='Info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='kulAngkot(\"" + id_facility + "\")'></a></td></tr>");
                 }
                 $('#hasilpencarian').append("<h5 class='box-title' id='hasilpencarian'>Result :</h5>" + rows.length);
             }
@@ -1932,7 +1932,7 @@ function industri_sekitar(latitude, longitude, rad) { //INDUSTRI SEKITAR
                 });
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
-                $('#hasilcariind').append("<tr><td>" + name + "</td><td align='center'><button role='button' style='margin:2px' class='btn btn-success fa fa-info' onclick='modal_small_industry(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button role='button' class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' style='margin:2px' onclick='ikangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcariind').append("<tr><td>" + name + "</td><td align='center'><button role='button' style='margin:2px' class='btn btn-success fa fa-info' title='Info' onclick='modal_small_industry(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' title='Position' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button role='button' class='btn btn-success fa fa-road' title='Road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' title='Angkot' style='margin:2px' onclick='ikangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -1969,7 +1969,7 @@ function restaurant_sekitar(latitude, longitude, rad) { //RESTORAN SEKITAR
                 });
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
-                $('#hasilcarirestaurant').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_restaurant(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button style='margin:2px' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' style='margin:2px' onclick='restaurantangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcarirestaurant').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' title='Info' style='margin:2px' onclick='modal_restaurant(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' title='Position' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button style='margin:2px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' title='Angkot' style='margin:2px' onclick='restaurantangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2014,7 +2014,7 @@ function kuliner_sekitar(latitude, longitude, rad) { //KULINER SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcariculi').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='detculi(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button role='button' style='margin:2px' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcariculi').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' title='Info' style='margin:2px' onclick='detculi(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' title='Position' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button role='button' style='margin:2px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2053,7 +2053,7 @@ function masjid_sekitar(latitude, longitude, rad) { // MASJID SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcarimosque').append("<tr><td>" + name + "</td><td><div align='center'><button class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_masjid(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button class='btn btn-success fa fa-taxi' style='margin:2px' onclick='worshipangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></div></td></tr>");
+                $('#hasilcarimosque').append("<tr><td>" + name + "</td><td><div align='center'><button class='btn btn-success fa fa-info' title='Info' style='margin:2px' onclick='modal_masjid(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' title='Position' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button class='btn btn-success fa fa-road' title='Route' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button class='btn btn-success fa fa-taxi'  title='Angkot' style='margin:2px' onclick='worshipangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></div></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2093,7 +2093,7 @@ function oleholeh_sekitar(latitude, longitude, rad) { // OLEH-OLEH SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcarisouv').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_oo(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button class='btn btn-success fa fa-road' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' style='margin:2px' onclick='souangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcarisouv').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' title='Info' style='margin:2px' onclick='modal_oo(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' title='Position' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button class='btn btn-success fa fa-road' title='Route' style='margin:2px' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' title='Angkot' style='margin:2px' onclick='souangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2134,7 +2134,7 @@ function tw_sekitar(latitude, longitude, rad) { // TEMPAT WISATA SEKITAR
                 markersDua.push(marker);
                 map.setCenter(centerBaru);
 
-                $('#hasilcariobj').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_tw(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button style='margin:2px' role='button' class='btn btn-success fa fa-road' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' onclick='owangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcariobj').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' title='Info' style='margin:2px' onclick='modal_tw(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' title='Position' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button><button style='margin:2px' role='button' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='owangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2176,7 +2176,7 @@ function h_sekitar(latitude, longitude, rad) { // TEMPAT WISATA SEKITAR
                 map.setCenter(centerBaru);
                 console.log(rad);
 
-                $('#hasilcarihotel').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' style='margin:2px' onclick='modal_hotel(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button>&nbsp;<button role='button' class='btn btn-success fa fa-road'   onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' style='margin:2px' onclick='hotelangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
+                $('#hasilcarihotel').append("<tr><td>" + name + "</td><td align='center'><button role='button' class='btn btn-success fa fa-info' title='Info' style='margin:2px' onclick='modal_hotel(\"" + id + "\")'></button><button class='btn btn-success fa fa-location-arrow' title='Position' onclick='set_center(\"" + lat + "\",\"" + lon + "\",\"" + name + "\")'></button>&nbsp;<button role='button' class='btn btn-success fa fa-road' title='Route'  onclick='route_sekitar(\"" + latitude + "\",\"" + longitude + "\",\"" + lat + "\",\"" + lon + "\")'></button><button role='button' class='btn btn-success fa fa-taxi' title='Angkot' style='margin:2px' onclick='hotelangkot(\"" + id + "\",\"" + lat + "\",\"" + lon + "\")'></button></td></tr>");
             }//end for
         }
     });//end ajax
@@ -2422,7 +2422,7 @@ function viewcapacity() {
                     map.setZoom(14);
                     clickMarker(centerBaru, id);
                     console.log(id);
-                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
+                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info' title='Info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
                 }
                 $('#hasilpencarian').append("<h5 class='box-title' id='hasilpencarian'>Result :</h5>" + rows.length);
             }
@@ -2465,7 +2465,7 @@ function viewprice() {
                     map.setZoom(14);
                     clickMarker(centerBaru, id);
                     console.log(id);
-                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
+                    $('#hasilcari').append("<tr><td>" + name + "</td><td><a role='button' class='btn btn-success fa fa-info' title='Info' onclick='detculi(\"" + id + "\");detailinfokul(\"" + id + "\");'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='kulAngkot(\"" + id + "\")'></a></td></tr>");
                 }
                 $('#hasilpencarian').append("<h5 class='box-title' id='hasilpencarian'>Result :</h5>" + rows.length);
             }

@@ -17,7 +17,7 @@
                 $route_color=$baris['route_color'];
                 $latitude=$baris['latitude'];
                 $longitude=$baris['longitude'];
-                $dataarray[]=array('id_angkot'=>$id_angkot,'id'=>$id,'id'=>$id,'name'=>$name,'lat'=>$lat,'lng'=>$lng,'description'=>$description,'route_color'=>$route_color,"latitude"=>$latitude,"longitude"=>$longitude);
+                $dataarray[]=array('destination'=> $destination, 'id_angkot'=>$id_angkot,'id'=>$id,'id'=>$id,'name'=>$name,'lat'=>$lat,'lng'=>$lng,'description'=>$description,'route_color'=>$route_color,"latitude"=>$latitude,"longitude"=>$longitude);
             }
             echo json_encode ($dataarray);
 ?>

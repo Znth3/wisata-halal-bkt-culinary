@@ -27,7 +27,7 @@ $querysearch="
     WHERE detail_culinary.id_culinary in ('11')
     GROUP BY culinary_place.id
 	ORDER BY review  DESC
-    LIMIT 5";
+    LIMIT 4";
 
 $hasil=pg_query($querysearch);
 while($row = pg_fetch_array($hasil))

@@ -23,9 +23,14 @@ while($row = pg_fetch_array($hasil)){
 }
 ?>
 <!-- Default box -->
-
+<style>
+	.html5gallery-car-0{
+        margin-top:5px;
+    }
+	
+</style>
           <div class="row mt">
-           <div class="col-lg-7 ds" style="background-color:#f2f2f2;margin-left:30px;margin-bottom:20px">
+           <div class="col-lg-6 ds" style="background-color:#f2f2f2;margin-left:30px;margin-bottom:20px">
 				<div class="box-header with-border">
 				  <h2 class="box-title" style="text-transform:capitalize;"><b> <?php echo $name ?></b></h2>
 				</div>
@@ -44,7 +49,7 @@ while($row = pg_fetch_array($hasil)){
 						<tr><td><b>Culinary</b> </td><td>: </td><td>
 						<ul style="padding-left:20px;">
 							<table class="table table-hover table-bordered table-striped">
-							<thead><th>Jenis Kuliner</th><th>Harga</th></thead>
+							<thead><th>Culinary</th><th>Price</th></thead>
 							<tbody>													
 							<?php 
 								$queryl = "select * from detail_culinary join culinary on detail_culinary.id_culinary=culinary.id where id_culinary_place='$id' order by detail_culinary.id_culinary";
@@ -102,15 +107,14 @@ while($row = pg_fetch_array($hasil)){
             </div>
 
 <div class="col-lg-1"></div>
-	<div class="col-md-3 col-xs-3" style="background-color:#f2f2f2">
-		<div class="box">
+	<div class="col-md-5 col-xs-5" style="background-color:#f2f2f2">
+		<div class="box" style="height: 500px">
 			<div class="box-header with-border">
-			  <h3 class="box-title">Foto</h3>
+			  <h3 class="box-title">Photo</h3>
 			  <h4 class="box-title" style="text-transform:capitalize;"><b> <?php echo $name ?></b></h4>
 			</div>
 
-			<div class="html5gallery" data-autoslide="true" data-responsive="true" data-height="1"
-                 data-width="2">
+			<div class="html5gallery" data-autoslide="true" data-responsive="true">
 					<?php $id=$_GET['id'] ?>
 							<?php
 							$querysearch="SELECT gallery_culinary FROM culinary_gallery where id='$id'";
@@ -135,10 +139,10 @@ while($row = pg_fetch_array($hasil)){
 						
 						<input type="text" class="form-control hidden" name="id" value="<?php echo $id ?>">
 						<div class="form-group">
-						  <label for="file">Upload Foto</label>
+						  <label for="file">Upload Photo</label>
 						  <input type="file" class="" style="background:none;border:none; width:1000px; " name="image" required>
 						</div>
-						<span style="color:red;">*Ukuran gambar maksimal 500kb</span>
+						<span style="color:red;">*Max Size 500Kb</span>
 					  </div><!-- /.box-body -->
 
 					  <div class="box-footer">

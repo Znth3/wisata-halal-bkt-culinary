@@ -12,9 +12,10 @@ require("connect.php");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title>Improved Culinary</title>
     <!--      API here-->
-    <!----><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>
-   <!-- <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANIx4N48kL_YEfp-fVeWmJ_3MSItIP8eI"></script>-->
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgpfxdQ0Ep_nieNjV64u4yXWeSFHAT4BE"></script>
+<!--    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1TwYksj1uQg1V_5yPUZqwqYYtUIvidrY&callback=true"></script>-->
+   
+   
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -384,12 +385,12 @@ require("connect.php");
                             <div>
                                 <label style="color: black; margin-right:20px">Google Map with Location List</label>
                                 <button type="button" onclick="posisisekarang()" class="btn btn-success "
-                                        data-toggle="tooltip" id="posisinow" title="Posisi Saya"
+                                        data-toggle="tooltip" id="posisinow" title="My Position"
                                         style=""><i class="fa fa-location-arrow"> </i>
                                 </button>
 
                                 <button type="button" onclick="lokasimanual()" class="btn btn-success"
-                                        data-toggle="tooltip" id="posmanual" title="Posisi Manual"
+                                        data-toggle="tooltip" id="posmanual" title="Manual Positioning"
                                         style=""><i class="fa fa-map-marker"></i>
                                 </button>
 
@@ -401,7 +402,7 @@ require("connect.php");
                                 </button> -->
                                 <label id="tombol">
                                     <a type="button" onclick="legenda()" id="showlegenda" class="btn btn-success"
-                                       data-toggle="tooltip" title="Legenda" style="margin-right: 7px;"><i
+                                       data-toggle="tooltip" title="Legend" style="margin-right: 7px;"><i
                                                 class="fa fa-eye"></i>
                                     </a>
                             </div>
@@ -722,7 +723,7 @@ require("connect.php");
                 <div class="col-lg-4 ds" id="hasilrute" style="display:none;">
                     <!-- <div class="col-md-12 padding-0" style="display:none;"> -->
                     <!-- <h3 style="font-size:16px">Rute</h3> -->
-                    <a class="btn btn-compose">Rute</a>
+                    <button class="btn btn-compose">Route</button>
                     <!-- First Action -->
                     <div class="box-body" style="max-height:557px;overflow:auto;">
                         <div class="form-group" id="detailrute1">

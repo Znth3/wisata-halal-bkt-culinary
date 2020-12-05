@@ -11,7 +11,7 @@
                 $id=$baris['id'];
                 $name=$baris['name'];
                 $address=$baris['address'];
-                $destination = $bari['destination'];
+                $destination = $baris['destination'];
                 $lat=$baris['lat'];
                 $lng=$baris['lng'];
                 $description=$baris['description'];
