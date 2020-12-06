@@ -1,4 +1,4 @@
-var server = "http://localhost/kuliner/";
+var server = "http://gis-culinary.ddns.net/culinary/";
 var map;
 var markersDua = [];
 var koordinat = 'null'
